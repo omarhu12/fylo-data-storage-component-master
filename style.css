@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: hsl(229, 57%, 11%);
+  color: white;
+  width: 100vw;
+  font-family: "Raleway", sans-serif;
+  background-image: url("./images/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 50%;
+}
+
+div.mobile,
+div.desktop {
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+div.mobile span,
+div.desktop span {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+div.mobile {
+  display: none;
+}
+
+div.desktop {
+  position: absolute;
+  top: -2rem;
+  right: 5rem;
+}
+
+div.desktop::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  right: 0;
+  border: 14px solid transparent;
+  border-right: 14px solid white;
+}
+
+section {
+  display: flex;
+  width: 70vw;
+  gap: 2rem;
+}
+
+div.first {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 5px;
+  border-top-right-radius: 5rem;
+  width: 45%;
+  height: fit-content;
+  height: 100%;
+  height: 230px;
+}
+
+div.first div.flexRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+div.first div.flexRow i {
+  background-color: hsl(229, 57%, 11%);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+div.first div.flexRow i img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+div.second {
+  padding: 3rem;
+  background-color: hsl(228, 56%, 26%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-radius: 10px;
+  height: fit-content;
+  align-self: flex-end;
+  position: relative;
+}
+
+div.second p {
+  width: 95%;
+}
+
+div.bar {
+  width: 95%;
+  height: 1rem;
+  border-radius: 1rem;
+  padding-top: 0.15rem;
+  padding-left: 0.15rem;
+  background-color: hsl(229, 57%, 11%);
+}
+
+div.progress {
+  width: 80%;
+  background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  height: 0.7rem;
+  border-radius: 1rem;
+  padding-top: 0.01rem;
+  position: relative;
+}
+
+div.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+}
+
+div.rowFlex {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 950px) {
+  body {
+    background-image: url("./images/bg-mobile.png");
+    background-size: 100% 100%;
+  }
+  section {
+    flex-direction: column;
+  }
+
+  div.first {
+    width: 100%;
+  }
+
+  div.desktop {
+    display: none;
+  }
+
+  div.mobile {
+    display: block;
+    position: absolute;
+    bottom: -2.5rem;
+    right: calc(50% - 70px);
+  }
+}
+
+@media (max-width: 500px) {
+  div.mobile span {
+    font-size: 1.2rem;
+  }
+  div.second p {
+    font-size: 0.6rem;
+    width: 100%;
+  }
+  div.mobile {
+    font-size: 1rem;
+    display: block;
+    position: absolute;
+    bottom: -1.5rem;
+    right: calc(50% - 70px);
+  }
+}
